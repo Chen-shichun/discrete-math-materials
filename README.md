@@ -1,21 +1,39 @@
-# 离散数学素材库 / Discrete Mathematics Materials
+# 离散数学智能学习资料库
 
-面向计算机相关专业期末复习的结构化素材库，包含知识点、习题、图形题、易错点与诊断工具。
+面向计算机与软件工程专业期末复习的结构化离散数学资源，覆盖命题逻辑、谓词逻辑、集合论、二元关系、函数、代数系统基础和图论基础。
 
-## 目录
+## 主要内容
 
-- `knowledge/` 知识点讲义
-- `practice/` 习题库
-- `visuals/` 图形题配图
-- `teaching/` 配套教学素材
-- `reference/` 考点、映射与依赖索引
-- `tools/` 进度记录与分析脚本
-- `skills/` 离散数学诊断 Skill
+- `知识点/`：七章知识点讲义，包含三级知识点 ID。
+- `习题库/`：基础题与综合提升题，共 245 道。
+- `图形题配套包/`：图形题说明及高清配图。
+- `配套素材/`：各章考点与易错点教学材料。
+- `skills/discrete-math-diagnosis/`：错题诊断 Skill。
+- `tools/`：知识库校验、进度记录和学习画像脚本。
+- 根目录索引：考点分布、知识依赖、易错点与题目映射。
 
-## 使用说明
+## 快速开始
 
-请先阅读 `skills/discrete-math-diagnosis/SKILL.md`，再按需加载对应目录。仓库不包含本地智能体配置、缓存目录和学生个人进度数据。
+1. 将仓库作为完整资料库使用，不要单独移动 `skills/` 目录。
+2. 阅读 `skills/discrete-math-diagnosis/SKILL.md`，按相对路径加载所需资料。
+3. 运行 `python tools/kb_integrity_test.py` 检查知识库完整性。
+4. 记录学习进度时运行：
 
-## English
+   `python tools/record_diagnosis.py --user demo --kp CH1-03 --result wrong --error-type 符号形式`
 
-This repository provides structured materials for discrete mathematics exam preparation: notes, exercises, visual questions, reference indexes, and diagnosis tools. See the directory names above for the English mapping.
+首次记录会自动生成 `student_progress.json`。该文件包含个人学习数据，已加入 `.gitignore`，请勿提交到公共仓库。
+
+## 设计特点
+
+- 题目、知识点、易错点和前置依赖均通过稳定 ID 关联。
+- 默认只使用仓库内资料，避免把外部内容混入课程知识库。
+- 无法匹配原题时明确标记“未匹配”，不会编造题目 ID。
+- 支持图形题配图、错误聚类、薄弱点分析和考前冲刺规划。
+
+## 隐私说明
+
+仓库不包含学生真实进度、本地智能体配置、缓存或参赛提交材料。请使用 `student_progress.example.json` 了解数据格式，并将真实进度保留在本地。
+
+## 许可
+
+本仓库暂未声明开源许可证。未经作者明确授权，请勿将内容用于商业分发。

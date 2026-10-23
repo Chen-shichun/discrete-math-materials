@@ -1,0 +1,7 @@
+student_progress.json
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+output/
+reports/
