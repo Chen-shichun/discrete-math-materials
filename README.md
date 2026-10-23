@@ -19,4 +19,3 @@
 ## English
 
 This repository provides structured materials for discrete mathematics exam preparation: notes, exercises, visual questions, reference indexes, and diagnosis tools. See the directory names above for the English mapping.
-
