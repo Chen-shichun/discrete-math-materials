@@ -9,7 +9,7 @@
 
 用法：
   python analyze_progress.py --user <user_id> [--days 7] [--file <path>] [--json]
-  --file 缺省读 student_progress.json；也可指向参赛材料/student_progress_demo.json 做演示。
+  --file 缺省读 student_progress.json；也可指向其他兼容格式的进度文件。
 """
 import json, os, argparse, datetime, re
 from collections import Counter

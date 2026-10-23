@@ -171,12 +171,9 @@ def classify(rel):
     if rel.endswith("考点分布.md"): return "考点蓝图", "md"
     if rel.endswith("高频考点清单.md"): return "高频考点", "md"
     if rel.endswith("题型归类映射表.md"): return "题型映射", "md"
-    if rel == "AGENTS.md": return "智能体主配置", "md"
     if rel.endswith("student_progress.json"): return "进度状态", "json"
     if rel == "README.md": return "说明文档", "md"
     if rel.startswith("tools/"): return "维护脚本", ext
-    if rel.startswith("参赛材料/参考资料/"): return "参考资料", ext
-    if rel.startswith("参赛材料/"): return "参赛材料", ext
     if rel.startswith("skills/") and rel.endswith("SKILL.md"): return "技能定义", "md"
     return "其他", "other"
 

@@ -16,8 +16,9 @@
 
 1. 将仓库作为完整资料库使用，不要单独移动 `skills/` 目录。
 2. 阅读 `skills/discrete-math-diagnosis/SKILL.md`，按相对路径加载所需资料。
-3. 运行 `python tools/kb_integrity_test.py` 检查知识库完整性。
-4. 记录学习进度时运行：
+3. 安装脚本依赖：`python -m pip install -r requirements.txt`。
+4. 运行 `python tools/kb_integrity_test.py` 检查知识库完整性。
+5. 记录学习进度时运行：
 
    `python tools/record_diagnosis.py --user demo --kp CH1-03 --result wrong --error-type 符号形式`
 
@@ -29,6 +30,7 @@
 - 默认只使用仓库内资料，避免把外部内容混入课程知识库。
 - 无法匹配原题时明确标记“未匹配”，不会编造题目 ID。
 - 支持图形题配图、错误聚类、薄弱点分析和考前冲刺规划。
+- Skill 按任务加载详细流程：普通概念提问与冲刺规划无需读取完整诊断规则。
 
 ## 隐私说明
 
