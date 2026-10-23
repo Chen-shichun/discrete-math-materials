@@ -1,0 +1,4 @@
+interface:
+  display_name: "离散数学错题诊断"
+  short_description: "定位错因、讲解知识点并生成针对性练习与复习计划"
+  default_prompt: "使用 $discrete-math-diagnosis 诊断这道离散数学错题，并给出针对性练习。"

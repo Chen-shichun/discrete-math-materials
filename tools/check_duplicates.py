@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""维护脚本：扫描重复文件（内容哈希 / 同名）"""
+"""维护脚本：扫描仓库内容中的重复文件（SHA-256 / 同名）。"""
 import os, hashlib
 from collections import defaultdict
 
@@ -10,6 +10,7 @@ by_name = defaultdict(list)
 sizes = {}
 
 for dirpath, dirnames, filenames in os.walk(base):
+    dirnames[:] = [d for d in dirnames if d not in {".git", "__pycache__", ".pytest_cache"}]
     for fn in filenames:
         full = os.path.join(dirpath, fn)
         rel = os.path.relpath(full, base)
@@ -21,7 +22,7 @@ for dirpath, dirnames, filenames in os.walk(base):
         by_name[fn].append(rel)
         if sz < 5 * 1024 * 1024:
             try:
-                by_hash[hashlib.md5(open(full, "rb").read()).hexdigest()].append(rel)
+                by_hash[hashlib.sha256(open(full, "rb").read()).hexdigest()].append(rel)
             except Exception:
                 pass
 

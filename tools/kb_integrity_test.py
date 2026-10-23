@@ -164,3 +164,5 @@ os.makedirs(_outdir, exist_ok=True)
 open(os.path.join(_outdir, "test_report.txt"), "w", encoding="utf-8").write("\n".join(report))
 print("test done, rate:", f"{100.0*passed/total:.1f}%")
 print("report -> tools/test_report.txt")
+if passed != total:
+    raise SystemExit(1)

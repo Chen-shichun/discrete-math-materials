@@ -43,3 +43,5 @@ for ch in CH:
 
 print(f"\n总图形题数: {total_yes}")
 print("问题:", problems if problems else "无 —— 说明md / J列 / 图片文件 三者一致")
+if problems:
+    raise SystemExit(1)
